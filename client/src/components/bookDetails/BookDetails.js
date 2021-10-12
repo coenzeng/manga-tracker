@@ -1,20 +1,15 @@
 import { graphql } from '@apollo/client/react/hoc';
-import { getBookQuery } from '../queries/queries'
+import { getBookQuery } from '../../queries/queries'
+import { useSelector, useDispatch } from 'react-redux'
 
-function BookDetails(props) {
-    console.log(props)
-    return (
-        <div id="book-details">
-            <DisplayBookDetails {...props}/>
-        </div>
-    )
-}
+function BookDetails() {
+    //console.log(props)
+    const bookDetails = useSelector((state) => state.bookDetails.value)
 
-function DisplayBookDetails(props){
-    const { book } = props.data;
-    if (book){
+    if (bookDetails && bookDetails.data){
+        const { book } = bookDetails.data;
         return (
-            <div>
+            <div id="book-details">
                 <h2>{ book.name }</h2>
                 <p>{book.genre}</p>
                 <p>{book.author.name}</p>
@@ -28,7 +23,7 @@ function DisplayBookDetails(props){
         )
     } else {
         return (
-        <div>No book selected...</div>
+        <div id="book-details">No book selected...</div>
         )
     }
 }
