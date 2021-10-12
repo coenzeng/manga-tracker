@@ -1,5 +1,8 @@
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
+import Counter from "./components/counter/Counter"
+import { store } from './state/store'
+import { Provider } from 'react-redux'
 
 import {
   ApolloClient,
@@ -16,13 +19,16 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <div className="App">
-        <h1>Coen's Reading List</h1>
-        <BookList/>
-        <AddBook/>
-      </div>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <div className="App">
+          <h1>Coen's Reading List</h1>
+          <BookList/>
+          <AddBook/>
+          <Counter></Counter>
+        </div>
+      </ApolloProvider>
+    </Provider>
   );
 }
 
