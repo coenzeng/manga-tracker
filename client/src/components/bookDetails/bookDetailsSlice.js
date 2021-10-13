@@ -8,11 +8,11 @@ export const bookDetailsSlice = createSlice({
   name: "bookDetails",
   initialState,
   reducers: {
-    changeBookDetails: (state, action) => {
+    setBookDetails: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { changeBookDetails } = bookDetailsSlice.actions;
+export const { setBookDetails } = bookDetailsSlice.actions;
 export default bookDetailsSlice.reducer;

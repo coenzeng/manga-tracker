@@ -62,7 +62,7 @@ function AddBook(props) {
 
 function DisplayAuthors(props) {
   var data = props.getAuthorsQuery;
-  console.log(props.getAuthorsQuery);
+  //console.log(props.getAuthorsQuery);
   if (data.loading) {
     return <option disabled>Loading Authors</option>;
   } else {

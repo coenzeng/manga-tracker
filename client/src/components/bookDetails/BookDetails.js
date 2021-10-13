@@ -1,9 +1,10 @@
-import { graphql } from "@apollo/client/react/hoc";
-import { getBookQuery } from "../../queries/queries";
+//import { graphql } from "@apollo/client/react/hoc";
+//import { getBookQuery } from "../../queries/queries";
 import { useSelector, useDispatch } from "react-redux";
 
 function BookDetails() {
-  //console.log(props)
+
+  //useSelector hook to get state of book details
   const bookDetails = useSelector((state) => state.bookDetails.value);
 
   if (bookDetails && bookDetails.data) {
@@ -26,6 +27,8 @@ function BookDetails() {
   }
 }
 
+export default BookDetails;
+/*
 export default graphql(getBookQuery, {
   options: (props) => {
     return {
@@ -34,4 +37,4 @@ export default graphql(getBookQuery, {
       },
     };
   },
-})(BookDetails);
+})(BookDetails);*/

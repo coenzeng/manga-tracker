@@ -1,4 +1,4 @@
-import BookList from "./components/BookList";
+import BookList from "./components/bookList/BookList";
 import AddBook from "./components/AddBook";
 import Counter from "./components/counter/Counter";
 import { store } from "./state/store";
