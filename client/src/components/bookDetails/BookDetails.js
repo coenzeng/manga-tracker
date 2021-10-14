@@ -9,7 +9,7 @@ function BookDetails() {
   if (bookDetails && bookDetails.data) {
     const { book } = bookDetails.data;
     return (
-      <div id="book-details">
+      <div>
         <h2>{book.name}</h2>
         <p>{book.genre}</p>
         <p>{book.author.name}</p>
@@ -22,18 +22,8 @@ function BookDetails() {
       </div>
     );
   } else {
-    return <div id="book-details">No book selected...</div>;
+    return <div>No book selected...</div>;
   }
 }
 
 export default BookDetails;
-/*
-export default graphql(getBookQuery, {
-  options: (props) => {
-    return {
-      variables: {
-        id: props.bookId,
-      },
-    };
-  },
-})(BookDetails);*/

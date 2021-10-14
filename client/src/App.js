@@ -3,10 +3,8 @@
 import Header from "./components/header/Header";
 import BookList from "./components/bookList/BookList";
 import AuthorList from "./components/authorList/AuthorList";
-import AddBook from "./components/addBook/AddBook";
 import Counter from "./components/counter/Counter";
-import AddBookModal from "./components/addBook/AddBookModal";
-
+import BookDetailsModal from "./components/bookDetails/BookDetailsModal";
 import { store } from "./state/store";
 import { Provider } from "react-redux";
 import { ChakraProvider } from '@chakra-ui/react'
@@ -33,7 +31,7 @@ function App() {
           <Header/>
           <BookList />
           <AuthorList/>
-          <AddBookModal/>
+          <BookDetailsModal/>
           <Counter></Counter>
         </div>
         </ChakraProvider>

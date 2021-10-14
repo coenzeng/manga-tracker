@@ -9,6 +9,8 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 
+import AddBookModal from "../addBook/AddBookModal";
+
 const Header = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleToggle = () => (isOpen ? onClose() : onOpen());
@@ -47,12 +49,7 @@ const Header = (props) => {
         display={{ base: isOpen ? "block" : "none", md: "block" }}
         mt={{ base: 4, md: 0 }}
       >
-        <Button
-          variant="outline"
-          _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-        >
-          Create account
-        </Button>
+        <AddBookModal variant="outline" />
       </Box>
     </Flex>
   );

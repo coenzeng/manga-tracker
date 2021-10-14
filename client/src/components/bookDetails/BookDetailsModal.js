@@ -1,4 +1,4 @@
-import AddBook from "./AddBook";
+import BookDetails from "./BookDetails";
 
 import {
   Modal,
@@ -13,25 +13,20 @@ import {
 import { useDisclosure } from "@chakra-ui/react"
 import { Button, ButtonGroup } from "@chakra-ui/react"
 
-function AddBookModal() {
+function BookDetailsModal() {
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-      <Button
-        onClick={onOpen}
-        variant="outline"
-        _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-      >
-        Add Book
-      </Button>
+      <Button onClick={onOpen}>Book Details</Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Book</ModalHeader>
+          <ModalHeader>Book Details</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <AddBook />
+            <BookDetails/>
+         
           </ModalBody>
 
           <ModalFooter>
@@ -46,4 +41,4 @@ function AddBookModal() {
   );
 }
 
-export default AddBookModal;
+export default BookDetailsModal;
