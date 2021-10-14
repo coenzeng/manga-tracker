@@ -1,6 +1,16 @@
 # Manga Tracking App
 
-This project uses React and Redux toolkit in the frontend and Node, Express, MongoDB in the backend. Finally, it uses GraphQL and Apollo to facilitate commication between client and server.
+The frontend uses:
+- React
+- Redux toolkit for state management 
+- Chakra UI for styling
+
+The backend uses:
+- Node
+- Express
+- MongoDB
+
+Also, it uses GraphQL and Apollo to facilitate commication between client and server.
 
 ## Setup and Installation
 
