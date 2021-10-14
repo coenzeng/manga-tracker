@@ -1,5 +1,6 @@
 
 //components
+import Header from "./components/header/Header";
 import BookList from "./components/bookList/BookList";
 import AuthorList from "./components/authorList/AuthorList";
 import AddBook from "./components/addBook/AddBook";
@@ -29,7 +30,7 @@ function App() {
       <ApolloProvider client={client}>
         <ChakraProvider>
         <div className="App">
-          <h1>Coen's Reading List</h1>
+          <Header/>
           <BookList />
           <AuthorList/>
           <AddBookModal/>
