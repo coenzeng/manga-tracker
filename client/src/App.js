@@ -1,5 +1,5 @@
 import BookList from "./components/bookList/BookList";
-import AddBook from "./components/AddBook";
+import AddBook from "./components/addBook/AddBook";
 import Counter from "./components/counter/Counter";
 import { store } from "./state/store";
 import { Provider } from "react-redux";
