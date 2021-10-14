@@ -10,6 +10,17 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as compose from "lodash.flowright";
 
+//css imports
+import { Button, ButtonGroup } from "@chakra-ui/react"
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Select,
+} from "@chakra-ui/react"
+
 function AddBook(props) {
 
   const [setaddBookMutation, { data }] = useMutation(addBookMutation);
@@ -18,8 +29,7 @@ function AddBook(props) {
   const [genre, setGenre] = useState("");
   const [authorId, setAuthorId] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     console.log(name, genre, authorId);
 
     await setaddBookMutation({
@@ -38,53 +48,55 @@ function AddBook(props) {
    
   };
   return (
-    <form id="add-book" onSubmit={handleSubmit}>
-      <div className="field">
-        <label>Book name:</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            
-          }}
-        />
-      </div>
-      <div className="field">
-        <label>Genre:</label>
-        <input
-          type="text"
-          value={genre}
-          onChange={(e) => {
-            setGenre(e.target.value);
-          }}
-        />
-      </div>
-      <div className="field">
-        <label>Author:</label>
+   
+      <FormControl isRequired id="book" onSubmit={handleSubmit}>
+        <FormLabel >Book name: </FormLabel>
+        <Input 
+                placeholder="One Piece"
+                value={name}
+                 onChange={(e) => {
+                  setName(e.target.value);
+                }}/>
+        <FormHelperText>The name of the book.</FormHelperText>
 
-        <select
-          value={authorId}
-          onChange={(e) => {
-            setAuthorId(e.target.value);
-          }}
-        >
-          <option>Select author</option>
-          <DisplayAuthors {...props} />
-        </select>
-      </div>
-      <button>+</button>
-    </form>
+        <FormLabel>Genre: </FormLabel>
+        <Input 
+              placeholder="Shonen" 
+                  value={genre}
+                 onChange={(e) => {
+                  setGenre(e.target.value);
+                }}/>
+        <FormHelperText>The genre.</FormHelperText>
+        <FormLabel>Author:</FormLabel>
+            <Select 
+                placeholder="Select author"
+                value={authorId}
+                onChange={(e) => {
+                  setAuthorId(e.target.value);
+                }}
+            >
+    
+              <DisplayAuthors {...props} />
+            </Select>
+            <Button
+              mt={4}
+              colorScheme="teal"
+              type="submit"
+              onClick={() => {
+                handleSubmit();
+              }}
+          >
+            Submit
+          </Button>
+       </FormControl>
   );
 }
 
-function DisplayAuthors(props) {
-  var data = props.getAuthorsQuery;
-  //console.log(props.getAuthorsQuery);
-  if (data.loading) {
-    return <option disabled>Loading Authors</option>;
-  } else {
-    return data.authors.map((author) => {
+function DisplayAuthors() {
+  const authorListData = useSelector((state) => state.authorList.value);
+
+  if (authorListData && authorListData.authors)  {
+    return authorListData.authors.map((author) => {
       return (
         <option key={author.id} value={author.id}>
           {" "}
@@ -92,10 +104,15 @@ function DisplayAuthors(props) {
         </option>
       );
     });
+
+  } else {
+    return <option disabled>Loading Authors...</option>;
   }
+  
 }
 
-export default compose(
-  graphql(getAuthorsQuery, { name: "getAuthorsQuery" })
+export default AddBook;
+//export default compose(
+  //graphql(getAuthorsQuery, { name: "getAuthorsQuery" })
   //graphql(addBookMutation, { name: "addBookMutation" })
-)(AddBook);
+//)(AddBook);

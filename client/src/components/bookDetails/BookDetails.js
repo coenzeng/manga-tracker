@@ -1,5 +1,4 @@
 //import { graphql } from "@apollo/client/react/hoc";
-//import { getBookQuery } from "../../queries/queries";
 import { useSelector, useDispatch } from "react-redux";
 
 function BookDetails() {
