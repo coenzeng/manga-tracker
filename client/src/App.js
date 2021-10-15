@@ -3,7 +3,6 @@
 import Header from "./components/header/Header";
 import BookList from "./components/bookList/BookList";
 import AuthorList from "./components/authorList/AuthorList";
-import Counter from "./components/counter/Counter";
 import BookDetailsModal from "./components/bookDetails/BookDetailsModal";
 import { store } from "./state/store";
 import { Provider } from "react-redux";
@@ -32,7 +31,6 @@ function App() {
           <BookList />
           <AuthorList/>
           <BookDetailsModal/>
-          <Counter></Counter>
         </div>
         </ChakraProvider>
       </ApolloProvider>

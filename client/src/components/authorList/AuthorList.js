@@ -16,7 +16,7 @@ function AuthorList() {
 
   return (
     <div>
-      <ul id="book-list">
+      <ul>
         <DisplayAuthors />
       </ul>
     </div>

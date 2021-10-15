@@ -8,6 +8,12 @@ import { setBookList } from "./bookListSlice";
 
 //components
 import BookDetails from "../bookDetails/BookDetails";
+import BookCard from "../bookCard/BookCard";
+
+//css
+import { Box, Image, Badge, Text, Stack, 
+  useColorMode, Button, Flex, Spacer } 
+  from "@chakra-ui/react";
 
 function BookList() {
   const dispatch = useDispatch();
@@ -50,7 +56,7 @@ function DisplayBooks() {
             getBookDetails({ variables: { id: book.id } });
           }}
         >
-          {book.name}
+          <BookCard name={book.name}/>
         </li>
       );
     });
