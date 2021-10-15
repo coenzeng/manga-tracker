@@ -20,7 +20,8 @@ function AddBookModal() {
       <Button
         onClick={onOpen}
         variant="outline"
-        _hover={{ bg: "teal.700", borderColor: "teal.700" }}
+        colorScheme="teal"
+        _hover={{ bg: "teal.100", borderColor: "teal.700" }}
       >
         Add Book
       </Button>
