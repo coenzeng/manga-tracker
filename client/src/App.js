@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import BookList from "./components/bookList/BookList";
 import AuthorList from "./components/authorList/AuthorList";
 import BookDetailsModal from "./components/bookDetails/BookDetailsModal";
+import Footer from "./components/footer/Footer"
 import { store } from "./state/store";
 import { Provider } from "react-redux";
 import { ChakraProvider } from '@chakra-ui/react'
@@ -31,6 +32,7 @@ function App() {
           <BookList />
           <AuthorList/>
           <BookDetailsModal/>
+          <Footer/>
         </div>
         </ChakraProvider>
       </ApolloProvider>
