@@ -1,6 +1,10 @@
+#book-list {
+  margin: 50px 5%;
+}
 #book-list li {
   display: inline-block;
   cursor: pointer;
+ 
 }
 
 #App {

@@ -17,33 +17,38 @@ import {
   
   function BookCard({name}) {
     return (
-        
       <Flex p={2} w="100%" alignItems="center" justifyContent="center">
         <Box
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue("white", "gray.800")}
           maxW="200px" //adjust size of each BookCard
           borderWidth="1px"
           rounded="lg"
           shadow="lg"
-          position="relative">
-
+          position="relative"
+        >
           <Image
             src={data.imageURL}
-            alt={`Picture of ${{name}}`}
+            alt={`Picture of ${{ name }}`}
             roundedTop="lg"
           />
-  
-          <Box p="6">
-            <Flex justifyContent="space-between" alignContent="center">
+          <Box pl="6" pt="4" pb="3">
+            <Box d="flex" alignItems="baseline">
+              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+                1234 upvotes
+              </Badge>
+            </Box>
+
+            <Flex m="1" justifyContent="space-between" alignContent="center">
               <Box
                 fontSize="md"
                 fontWeight="semibold"
                 as="h1"
                 lineHeight="tight"
-                isTruncated>
+                isTruncated
+                
+              >
                 {name}
               </Box>
-             
             </Flex>
           </Box>
         </Box>

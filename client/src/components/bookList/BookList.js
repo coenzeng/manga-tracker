@@ -11,9 +11,7 @@ import BookDetails from "../bookDetails/BookDetails";
 import BookCard from "../bookCard/BookCard";
 
 //css
-import { Box, Image, Badge, Text, Stack, 
-  useColorMode, Button, Flex, Spacer } 
-  from "@chakra-ui/react";
+import { Center, Square, Circle } from "@chakra-ui/react"
 
 function BookList() {
   const dispatch = useDispatch();
