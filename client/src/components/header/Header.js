@@ -230,41 +230,38 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Inspiration',
+    label: 'Top Manga',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Trending This Month',
+        subLabel: '...',
         href: '#',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Trending This Year',
+        subLabel: '...',
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Top Authors',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
+        label: 'Top Authors this Year',
+        subLabel: '...',
         href: '#',
       },
       {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
+        label: 'Top Authors of All Time',
+        subLabel: '...',
         href: '#',
       },
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'Contact',
     href: '#',
   },
-  {
-    label: 'Hire Designers',
-    href: '#',
-  },
+
 ];
